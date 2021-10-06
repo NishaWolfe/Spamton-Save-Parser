@@ -34,7 +34,7 @@ function ParseIntro(){
   }
   
   //Lines 2-7
-  for(var i = 0; i <= 5; i++){
+  for(var i = 0; i < 6; i++){
     chapterArray[1+i] = {
       title: `Other Name ${i}`,
       description: ``,
@@ -47,7 +47,7 @@ function ParseIntro(){
   chapterArray[1].title = "Vessel Name";
   
   //Lines 8-10
-  for(var i = 0; i <= 2; i++){
+  for(var i = 0; i < 3; i++){
     chapterArray[7+i] = {
       title: `Party Member ${i+1}`,
       description: ``,
@@ -236,7 +236,7 @@ function ParseCharacters(weapons, armor, spells){
     }
 
 
-    for(var j = 0; j <= 4; j++){
+    for(var j = 0; j < 4; j++){
       var curOffsetTemp = curOffset+10+(j*8);
       
       chapterArray[curOffsetTemp+0] = {
@@ -321,7 +321,7 @@ function ParseCharacters(weapons, armor, spells){
       
     }
 
-    for(var j = 0; j <= 12; j++){
+    for(var j = 0; j < 12; j++){
       chapterArray[curOffset+j+42] = {
         title: `${characters[i]} Spell Slot ${j+1}`,
         description: ``,
