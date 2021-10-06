@@ -3,7 +3,7 @@ var fs = Promise.promisifyAll(require('fs'));
 
 const requiredJSON = ["spells","armor","weapons","items","keyitems","lightworlditems","phonenumbers"];
 
-var chapterArray = new Array(316);
+var chapterArray = new Array(552);
 
 const workingDir = process.cwd();
 
@@ -53,7 +53,7 @@ function ParseIntro(){
       description: ``,
       range: {
         min:0,
-        max:3
+        max:4
       },
       var: `char[${i}]`
     }
@@ -129,10 +129,10 @@ function ParseIntro(){
 
 function ParseCharacters(weapons, armor, spells){
   const offset = 16;
-  const parseLength = 54;
-  const characters = ["Undefined","Kris","Susie","Ralsei"];
+  const parseLength = 62;
+  const characters = ["Undefined","Kris","Susie","Ralsei","Noelle"];
   
-  for(var i = 0; i < 4; i++){
+  for(var i = 0; i < 5; i++){
     var curOffset = offset+(parseLength*i);
     
     chapterArray[curOffset+0] = {
@@ -201,7 +201,7 @@ function ParseCharacters(weapons, armor, spells){
       dropdown:[],
       var: `charweapon[${i}]`
     }
-    for(var k = 0; k < 11; k++){
+    for(var k = 0; k < 23; k++){
       chapterArray[curOffset+6].dropdown[k] = weapons[k];
     }
     
@@ -211,7 +211,7 @@ function ParseCharacters(weapons, armor, spells){
       dropdown:[],
       var: `chararmor1[${i}]`
     }
-    for(var k = 0; k < 8; k++){
+    for(var k = 0; k < 23; k++){
       chapterArray[curOffset+7].dropdown[k] = armor[k];
     }
     
@@ -221,7 +221,7 @@ function ParseCharacters(weapons, armor, spells){
       dropdown:[],
       var: `chararmor2[${i}]`
     }
-    for(var k = 0; k < 8; k++){
+    for(var k = 0; k < 23; k++){
       chapterArray[curOffset+8].dropdown[k] = armor[k];
     }
 
@@ -237,7 +237,7 @@ function ParseCharacters(weapons, armor, spells){
 
 
     for(var j = 0; j < 4; j++){
-      var curOffsetTemp = curOffset+10+(j*8);
+      var curOffsetTemp = curOffset+10+(j*10);
       
       chapterArray[curOffsetTemp+0] = {
         title: `${characters[i]} itemat[${j}]`,
@@ -319,17 +319,37 @@ function ParseCharacters(weapons, armor, spells){
         var: `itemspecial[${i},${j}]`
       }
       
+      chapterArray[curOffsetTemp+8] = {
+        title: `${characters[i]} itemelement[${j}]`,
+        description: ``,
+        range:{
+          min:-9999999999,
+          max:9999999999
+        },
+        var: `itemelement[${i},${j}]`
+      }
+      
+      chapterArray[curOffsetTemp+9] = {
+        title: `${characters[i]} itemelementamount[${j}]`,
+        description: ``,
+        range:{
+          min:-9999999999,
+          max:9999999999
+        },
+        var: `itemelementamount[${i},${j}]`
+      }
+      
     }
 
     for(var j = 0; j < 12; j++){
-      chapterArray[curOffset+j+42] = {
+      chapterArray[curOffset+j+50] = {
         title: `${characters[i]} Spell Slot ${j+1}`,
         description: ``,
         dropdown:[],
         var: `spell[${i},${j}]`
       }
-      for(var k = 0; k < 8; k++){
-        chapterArray[curOffset+j+42].dropdown[k] = spells[k];
+      for(var k = 0; k < 12; k++){
+        chapterArray[curOffset+j+50].dropdown[k] = spells[k];
       }
     }
 
@@ -337,7 +357,7 @@ function ParseCharacters(weapons, armor, spells){
 }
 
 function ParseGraze(){
-  chapterArray[232] = {
+  chapterArray[326] = {
     title: `boltspeed`,
     description: ``,
     range:{
@@ -347,7 +367,7 @@ function ParseGraze(){
     var: `boltspeed`
   }
   
-  chapterArray[233] = {
+  chapterArray[327] = {
     title: `grazeamt`,
     description: ``,
     range:{
@@ -357,7 +377,7 @@ function ParseGraze(){
     var: `grazeamt`
   }
   
-  chapterArray[234] = {
+  chapterArray[328] = {
     title: `grazesize`,
     description: ``,
     range:{
@@ -368,10 +388,10 @@ function ParseGraze(){
   }
 }
 
-function ParseItems(items,keyitems,weapons,armor){
+function ParseItems(items,keyitems){
   
-  var offset = 235;
-  var parseLength = 4;
+  var offset = 329;
+  var parseLength = 2;
   for(var i = 0; i < 13; i++){
     var curOffset = offset + (i*parseLength);
     
@@ -381,7 +401,7 @@ function ParseItems(items,keyitems,weapons,armor){
       dropdown:[],
       var: `item[${i}]`
     }
-    for(var k = 0; k < 16; k++){
+    for(var k = 0; k < 34; k++){
       chapterArray[curOffset+0].dropdown[k] = items[k];
     }
     
@@ -391,36 +411,70 @@ function ParseItems(items,keyitems,weapons,armor){
       dropdown:[],
       var: `keyitem[${i}]`
     }
-    for(var k = 0; k < 8; k++){
+    for(var k = 0; k < 16; k++){
       chapterArray[curOffset+1].dropdown[k] = keyitems[k];
     }
-    //This is for the Shadow Crystal.
-    chapterArray[curOffset+1].dropdown[chapterArray[curOffset+1].dropdown.length] = keyitems[13];
+  }
+}
+
+
+
+function ParseWeaponsArmor(weapons,armor){
+  
+  var offset = 355;
+  var parseLength = 2;
+  for(var i = 0; i < 48; i++){
+    var curOffset = offset + (i*parseLength);
     
-    chapterArray[curOffset+2] = {
+    chapterArray[curOffset+0] = {
       title: `Weapon Slot ${i+1}`,
       description: ``,
       dropdown:[],
       var: `weapon[${i}]`
     }
-    for(var k = 0; k < 11; k++){
-      chapterArray[curOffset+2].dropdown[k] = weapons[k];
+    for(var k = 0; k < 23; k++){
+      chapterArray[curOffset+0].dropdown[k] = weapons[k];
     }
     
-    chapterArray[curOffset+3] = {
+    chapterArray[curOffset+1] = {
       title: `Armor Slot ${i+1}`,
       description: ``,
       dropdown:[],
       var: `armor[${i}]`
     }
-    for(var k = 0; k < 8; k++){
-      chapterArray[curOffset+3].dropdown[k] = armor[k];
+    for(var k = 0; k < 23; k++){
+      chapterArray[curOffset+1].dropdown[k] = armor[k];
     }
   }
 }
 
+
+
+function ParseStorage(items){
+  
+  var offset = 451;
+  for(var i = 0; i < 72; i++){
+    var curOffset = offset + i;
+    
+    chapterArray[curOffset] = {
+      title: `Storage Slot ${i+1}`,
+      description: ``,
+      dropdown:[],
+      var: `pocketitem[${i}]`
+    }
+    for(var k = 0; k < 34; k++){
+      chapterArray[curOffset].dropdown[k] = items[k];
+    }
+    
+  }
+}
+
+
+
+
+
 function ParseTension(){
-  chapterArray[287] = {
+  chapterArray[523] = {
     title: `tension`,
     description: ``,
     range:{
@@ -430,7 +484,7 @@ function ParseTension(){
     var: `tension`
   }
   
-  chapterArray[288] = {
+  chapterArray[524] = {
     title: `maxtension`,
     description: ``,
     range:{
@@ -444,25 +498,27 @@ function ParseTension(){
 
 function ParseLightworld(lightworlditems){
   
-  chapterArray[289] = {
+  chapterArray[525] = {
     title: `Lightworld Weapon`,
     description: ``,
     dropdown:[],
     var: `lweapon`
   }
-  chapterArray[289].dropdown[chapterArray[289].dropdown.length] = lightworlditems[2];
-  chapterArray[289].dropdown[chapterArray[289].dropdown.length] = lightworlditems[6];
-  chapterArray[289].dropdown[chapterArray[289].dropdown.length] = lightworlditems[7];
+  chapterArray[525].dropdown[chapterArray[525].dropdown.length] = lightworlditems[2];
+  chapterArray[525].dropdown[chapterArray[525].dropdown.length] = lightworlditems[6];
+  chapterArray[525].dropdown[chapterArray[525].dropdown.length] = lightworlditems[7];
+  chapterArray[525].dropdown[chapterArray[525].dropdown.length] = lightworlditems[12];
   
-  chapterArray[290] = {
+  chapterArray[526] = {
     title: `Lightworld Armor`,
     description: ``,
     dropdown:[],
     var: `larmor`
   }
-  chapterArray[290].dropdown[chapterArray[290].dropdown.length] = lightworlditems[3];
+  chapterArray[526].dropdown[chapterArray[526].dropdown.length] = lightworlditems[3];
+  chapterArray[526].dropdown[chapterArray[526].dropdown.length] = lightworlditems[14];
   
-  chapterArray[291] = {
+  chapterArray[527] = {
     title: `Lightworld EXP`,
     description: ``,
     range:{
@@ -472,7 +528,7 @@ function ParseLightworld(lightworlditems){
     var: `lxp`
   }
   
-  chapterArray[292] = {
+  chapterArray[528] = {
     title: `Lightworld Level`,
     description: ``,
     range:{
@@ -482,7 +538,7 @@ function ParseLightworld(lightworlditems){
     var: `llv`
   }
   
-  chapterArray[293] = {
+  chapterArray[529] = {
     title: `Lightworld Dollars`,
     description: ``,
     range:{
@@ -492,7 +548,7 @@ function ParseLightworld(lightworlditems){
     var: `lgold`
   }
   
-  chapterArray[294] = {
+  chapterArray[530] = {
     title: `Lightworld HP`,
     description: ``,
     range:{
@@ -502,7 +558,7 @@ function ParseLightworld(lightworlditems){
     var: `lhp`
   }
   
-  chapterArray[295] = {
+  chapterArray[531] = {
     title: `Lightworld Max HP`,
     description: ``,
     range:{
@@ -512,7 +568,7 @@ function ParseLightworld(lightworlditems){
     var: `lmaxhp`
   }
   
-  chapterArray[296] = {
+  chapterArray[532] = {
     title: `Lightworld AT`,
     description: ``,
     range:{
@@ -522,7 +578,7 @@ function ParseLightworld(lightworlditems){
     var: `lat`
   }
   
-  chapterArray[297] = {
+  chapterArray[533] = {
     title: `Lightworld DF`,
     description: ``,
     range:{
@@ -532,7 +588,7 @@ function ParseLightworld(lightworlditems){
     var: `ldf`
   }
   
-  chapterArray[298] = {
+  chapterArray[534] = {
     title: `lwstrength`,
     description: ``,
     range:{
@@ -542,7 +598,7 @@ function ParseLightworld(lightworlditems){
     var: `lwstrength`
   }
   
-  chapterArray[299] = {
+  chapterArray[535] = {
     title: `ladef`,
     description: ``,
     range:{
@@ -555,7 +611,7 @@ function ParseLightworld(lightworlditems){
 
 function ParseLightworldItems(lightworlditems,phonenumbers){
   
-  var offset = 300;
+  var offset = 536;
   var parseLength = 2;
   for(var i = 0; i < 8; i++){
     var curOffset = offset + (i*parseLength);
@@ -566,11 +622,9 @@ function ParseLightworldItems(lightworlditems,phonenumbers){
       dropdown:[],
       var: `litem[${i}]`
     }
-    for(var k = 0; k < 9; k++){
+    for(var k = 0; k < 15; k++){
       chapterArray[curOffset+0].dropdown[k] = lightworlditems[k];
     }
-    //Adds glass
-    chapterArray[curOffset+0].dropdown[chapterArray[curOffset+0].dropdown.length] = lightworlditems[11];
     
     chapterArray[curOffset+1] = {
       title: `Phone Number ${i+1}`,
@@ -584,7 +638,7 @@ function ParseLightworldItems(lightworlditems,phonenumbers){
   }
 }
  
- function ParseChapter1(){
+ function ParseChapter2(){
    return new Promise((resolve,reject)=>{
      GetAllJSON().then(function(jsonArray) {
        const spells = JSON.parse(jsonArray[0]);
@@ -598,7 +652,9 @@ function ParseLightworldItems(lightworlditems,phonenumbers){
        ParseIntro();
        ParseCharacters(weapons, armor, spells);
        ParseGraze();
-       ParseItems(items,keyitems,weapons,armor);
+       ParseItems(items,keyitems);
+       ParseWeaponsArmor(weapons,armor);
+       ParseStorage(items);
        ParseTension();
        ParseLightworld(lightworlditems);
        ParseLightworldItems(lightworlditems,phonenumbers);
@@ -611,4 +667,4 @@ function ParseLightworldItems(lightworlditems,phonenumbers){
    });
  }
  
-module.exports = ParseChapter1;
+module.exports = ParseChapter2;
