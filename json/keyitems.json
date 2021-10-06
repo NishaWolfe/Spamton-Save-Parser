@@ -1,0 +1,82 @@
+[
+  {
+    "id": 0,
+    "title": "(Empty)",
+    "description": ""
+  },
+  {
+    "id": 1,
+    "title": "Cell Phone",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "title": "Egg",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "title": "BrokenCake",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "title": "Broken Key A",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "title": "Door Key",
+    "description": ""
+  },
+  {
+    "id": 6,
+    "title": "Broken Key B",
+    "description": ""
+  },
+  {
+    "id": 7,
+    "title": "Broken Key C",
+    "description": ""
+  },
+  {
+    "id": 8,
+    "title": "Lancer",
+    "description": ""
+  },
+  {
+    "id": 9,
+    "title": "Rouxls Kaard",
+    "description": ""
+  },
+  {
+    "id": 10,
+    "title": "EmptyDisk",
+    "description": ""
+  },
+  {
+    "id": 11,
+    "title": "LoadedDisk",
+    "description": ""
+  },
+  {
+    "id": 12,
+    "title": "KeyGen",
+    "description": ""
+  },
+  {
+    "id": 13,
+    "title": "ShadowCrystal",
+    "description": ""
+  },
+  {
+    "id": 14,
+    "title": "Starwalker",
+    "description": ""
+  },
+  {
+    "id": 15,
+    "title": "PureCrystal",
+    "description": ""
+  }
+]

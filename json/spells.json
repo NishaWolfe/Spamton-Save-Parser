@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "title": "None",
+    "description": ""
+  },
+  {
+    "id": 1,
+    "title": "Rude Sword",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "title": "Heal Prayer",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "title": "Pacify",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "title": "Rude Buster",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "title": "Red Buster",
+    "description": ""
+  },
+  {
+    "id": 6,
+    "title": "Duel Heal",
+    "description": ""
+  },
+  {
+    "id": 7,
+    "title": "ACT",
+    "description": ""
+  },
+  {
+    "id": 8,
+    "title": "SleepMist",
+    "description": ""
+  },
+  {
+    "id": 9,
+    "title": "IceShock",
+    "description": ""
+  },
+  {
+    "id": 10,
+    "title": "SnowGrave",
+    "description": ""
+  },
+  {
+    "id": 11,
+    "title": "UltimatHeal",
+    "description": ""
+  }
+]

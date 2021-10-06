@@ -1,0 +1,22 @@
+{
+  "name": "spamton-save-parser",
+  "version": "0.1.0",
+  "description": "A Save File Parser for Deltarune Save Files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NishaWolfe/Spamton-Save-Parser.git"
+  },
+  "author": "Nisha Wolfe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NishaWolfe/Spamton-Save-Parser/issues"
+  },
+  "homepage": "https://github.com/NishaWolfe/Spamton-Save-Parser#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2"
+  }
+}
