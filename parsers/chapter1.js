@@ -236,7 +236,7 @@ function ParseCharacters(weapons, armor, spells){
     }
 
 
-    for(var j = 0; j <= 4; j++){
+    for(var j = 0; j < 4; j++){
       var curOffsetTemp = curOffset+10+(j*8);
       
       chapterArray[curOffsetTemp+0] = {
