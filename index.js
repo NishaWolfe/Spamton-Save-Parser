@@ -26,13 +26,30 @@ ParseAllData().then(function(dataArray) {
   fs.writeFile(`${exportDir}/Chapter1.json`,JSON.stringify(chapter1Data, null, 2),function(err){
     if(err){
       console.log(err);
+    }else{
+      
     }
   });
   
   fs.writeFile(`${exportDir}/Chapter2.json`,JSON.stringify(chapter2Data, null, 2),function(err){
     if(err){
       console.log(err);
+    }else{
+      console.log(`Chapter 2 file written to ${exportDir}/Chapter2.json`);
     }
   });
 
 });
+
+//For printing a specific line of data.
+function printLine(file,line){
+  var filePath = `${workingDir}/out/${file}.json`;
+  return fs.readFile(filePath,'utf8',function(err,data){
+    if(err){
+      console.log(err);
+    }else{
+      console.log(JSON.parse(data)[line]);
+    }
+  });
+}
+
