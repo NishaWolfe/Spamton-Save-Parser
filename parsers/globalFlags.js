@@ -177,6 +177,141 @@ function ParseNewhomeCh1(){
       on: 1
     }
   }
+  
+  flagArray[257] = {
+    title: `Fingers in Picnic Table`,
+    description: `Whether you've tried to stick your fingers in the picnic table or not`,
+    toggle:{
+      off: 0,
+      on: 1
+    }
+  }
+  
+  flagArray[258] = {
+    title: `Talked to Onion`,
+    description: `Whether you've talked to Onion and what note you ended the conversation on`,
+    dropdown:[
+      {
+        "id": 0,
+        "title": "Haven't Talked",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Started Conversation",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "Ended on a good note",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "title": "Ended on a bad note",
+        "description": ""
+      }
+    ]
+  }
+  
+  flagArray[259] = {
+    title: `Onion's name for you`,
+    description: `What you tell Onion your name is`,
+    dropdown:[
+      {
+        "id": 0,
+        "title": "None",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Kris",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "Hippopotamus",
+        "description": ""
+      }
+    ]
+  }
+  
+  flagArray[260] = {
+    title: `Onion's Name`,
+    description: `What name you give Onion`,
+    dropdown:[
+      {
+        "id": 0,
+        "title": "None",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Onion",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "Beauty",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "title": "Asriel II",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "title": "Disgusting",
+        "description": ""
+      }
+    ]
+  }
+  
+  flagArray[261] = {
+    title: `Free Hot Chocolate`,
+    description: `Whether you've claimed the free hot chocolate at the Diner or not`,
+    toggle:{
+      off: 0,
+      on: 1
+    }
+  }
+  
+  flagArray[262] = {
+    title: `Asgore Flower Cutscene`,
+    description: `Whether you've claimed the free hot chocolate at the Diner or not`,
+    dropdown:[
+      {
+        "id": 0,
+        "title": "Haven't Watched",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Watched",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "Gotten Flowers",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "title": "Given flowers to Toriel",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "title": "Toriel throws away flowers",
+        "description": ""
+      }
+    ]
+  }
+  
+  
+  
+  
 }
 
 function ParseGlobalFlags(){
