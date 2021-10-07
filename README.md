@@ -8,3 +8,21 @@ When using the data, keep in mind that "Line 1" in the save file is actually con
 
 
 
+## Prerequisits
+
+The latest LTS of NodeJS & npm
+
+
+
+## Installation
+
+```
+npm install
+```
+
+
+## Usage
+
+```
+npm start
+```
