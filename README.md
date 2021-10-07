@@ -26,3 +26,5 @@ npm install
 ```
 npm start
 ```
+
+Output is stores in the `out/` directory.
