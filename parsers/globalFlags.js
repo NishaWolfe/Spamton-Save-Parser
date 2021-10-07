@@ -156,7 +156,7 @@ function ParseNewhomeCh1(){
   
   flagArray[255] = {
     title: `Noelle Hospital Cutscene`,
-    description: `The cutscene that plays at the end of Chapter 1 when you visit the Hospital for the first time.`
+    description: `The cutscene that plays at the end of Chapter 1 when you visit the Hospital for the first time.`,
     dropdown:[
       {
         "id": 0,
