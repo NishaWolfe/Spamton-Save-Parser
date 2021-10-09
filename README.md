@@ -27,4 +27,4 @@ npm install
 npm start
 ```
 
-Output is stores in the `out/` directory.
+Output is stored in the `out/` directory.

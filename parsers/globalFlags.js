@@ -4,7 +4,7 @@ function SetFlags(){
   for(var i = 0; i < flagArray.length; i++){
     if(flagArray[i] == null){
       flagArray[i] = {
-        title: `Global Flag ${i}`,
+        title: `flag[${i}]`,
         description: ``,
         range:{
           min:-9999999999,
@@ -179,19 +179,35 @@ function ParseNewhomeCh1(){
   flagArray[256] = {
     title: `Talked to Berdly`,
     description: `Whether you've talked to Berdly or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[257] = {
     title: `Fingers in Picnic Table`,
     description: `Whether you've tried to stick your fingers in the picnic table or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[258] = {
@@ -278,10 +294,18 @@ function ParseNewhomeCh1(){
   flagArray[261] = {
     title: `Free Hot Chocolate`,
     description: `Whether you've claimed the free hot chocolate at the Diner or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[262] = {
@@ -319,28 +343,52 @@ function ParseNewhomeCh1(){
   flagArray[265] = {
     title: `Talked to Catty`,
     description: `Whether you've talked to Catty or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[269] = {
     title: `Alphys Alleyway Cutscene`,
     description: `Whether Alphys has seen you int he alleyway or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[270] = {
     title: `Talked to Undyne`,
     description: `Whether you've talked to Undyne or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[271] = {
@@ -368,10 +416,18 @@ function ParseNewhomeCh1(){
   flagArray[272] = {
     title: `Phone call with Toriel`,
     description: `Whether you've spoken with Toriel on the phone or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[273] = {
@@ -421,10 +477,18 @@ function ParseNewhomeCh1(){
   flagArray[275] = {
     title: `Rudy's Sink Interaction`,
     description: `Whether you've interacted with Rudy's sink in the hospital or not`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[276] = {
@@ -475,28 +539,69 @@ function ParseOtherCh1(){
   flagArray[252] = {
     title: `Bed Inspector`,
     description: `Whether you've inspected all of the beds in the castle or not.`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[253] = {
     title: `Spin Cake`,
     description: `Whether you've recieved the Spin Cake or not.`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[254] = {
     title: `The Original Starwalker`,
     description: `Whether you've spoken to The Original Starwalker or not.`,
-    toggle:{
-      off: 0,
-      on: 1
-    }
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
+  }
+  
+  flagArray[279] = {
+    title: `Defeated Jevil`,
+    description: `Whether you've defeated Jevil or not.`,
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
   }
   
   flagArray[910] = {
@@ -750,6 +855,51 @@ function ParseGoner(){
   }
   
 }
+
+function ParseNewhomeCh2(){
+  flagArray[302] = {
+    title: `Ball of Junk`,
+    description: `The status of the ball of junk you take from the unused classroom.`,
+    dropdown:[
+      {
+        "id": 0,
+        "title": "Not Gathered",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "On Head",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "In Dark World",
+        "description": ""
+      }
+    ]
+  }
+  
+  flagArray[303] = {
+    title: `Toriel School Cutscene`,
+    description: `If you've overheard Alphys and Toriel talking about you in the school`,
+    dropdown:[
+      {
+        "id": 0,
+        "title": "No",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "title": "Yes",
+        "description": ""
+      }
+    ]
+  }
+
+  
+}
+
+
 
 
 function ParseGlobalFlags(){
